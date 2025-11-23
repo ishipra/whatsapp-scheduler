@@ -12,3 +12,6 @@ debug.log
 
 #backup files
 backup/
+
+#database
+db.sqlite3

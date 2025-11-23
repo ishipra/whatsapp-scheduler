@@ -11,9 +11,26 @@
     <main class="container">
       <h1>WhatsApp Scheduler</h1>
 
-      <p id="message">Click the button to trigger an action in the scheduler.</p>
+      <form id="scheduleForm">
+        <div class="form-group">
+          <label for="phone">To (Phone Number):</label>
+          <input type="text" id="phone" name="phone" placeholder="+1234567890" required>
+          <small>Recipient's phone number (e.g., +1234567890)</small>
+        </div>
 
-      <button id="triggerBtn" class="btn">Trigger Action</button>
+        <div class="form-group">
+          <label for="body">Message:</label>
+          <textarea id="body" name="body" rows="4" placeholder="Enter your message here..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="scheduled_time">Scheduled Time:</label>
+          <input type="datetime-local" id="scheduled_time" name="scheduled_time" required>
+          <small>When to send the message (must be in the future). Timezone: <span id="timezone-display"></span></small>
+        </div>
+
+        <button type="submit" id="scheduleBtn" class="btn">Schedule Message</button>
+      </form>
 
       <div id="result" aria-live="polite"></div>
     </main>
