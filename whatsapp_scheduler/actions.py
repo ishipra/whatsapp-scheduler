@@ -6,10 +6,13 @@ function which performs a light-weight action and returns a string.
 
 import logging
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 from twilio.rest import Client
 
-load_dotenv()
+# Load .env file from project root (same directory as manage.py)
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
 
 logger = logging.getLogger(__name__)
 
