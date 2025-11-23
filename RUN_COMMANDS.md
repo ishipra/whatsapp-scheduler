@@ -6,7 +6,7 @@ Make sure you have a `.env` file with:
 ```
 TWILIO_ACCOUNT_SID=your_account_sid
 TWILIO_AUTH_TOKEN=your_auth_token
-TWILIO_WHATSAPP_FROM=whatsapp:+14155551234
+TWILIO_WHATSAPP_FROM=whatsapp:+xxxxxxxx
 REDIS_HOST=localhost
 REDIS_PORT=6379
 REDIS_DB=0
@@ -26,22 +26,27 @@ This will run:
 
 ## Option 2: Run Commands Separately (4 Terminal Windows)
 
-### Terminal 1: Django Server
+### Terminal 1: Start Redis
+```bash
+brew services start redis
+```
+
+### Terminal 2: Django Server
 ```bash
 python manage.py runserver
 ```
 
-### Terminal 2: Scheduler Loop
+### Terminal 3: Scheduler Loop
 ```bash
 python manage.py scheduler_loop
 ```
 
-### Terminal 3: Worker
+### Terminal 4: Worker
 ```bash
 python manage.py worker
 ```
 
-### Terminal 4: Run Migrations (one-time)
+**Note:** Run migrations once before starting:
 ```bash
 python manage.py migrate
 ```
