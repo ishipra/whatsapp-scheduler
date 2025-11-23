@@ -12,6 +12,15 @@ REDIS_PORT=6379
 REDIS_DB=0
 ```
 
+## Prerequisites
+
+**IMPORTANT: Run migrations FIRST before starting any services:**
+```bash
+python manage.py migrate
+```
+
+This creates the required database tables. You only need to do this once (or after pulling new migrations).
+
 ## Option 1: Run All Services Together (Development)
 
 ```bash
@@ -19,12 +28,17 @@ REDIS_DB=0
 ```
 
 This will run:
-1. Database migrations
+1. Database migrations (automatically)
 2. Django server (port 8000)
 3. Scheduler loop (enqueues messages every 30s)
 4. Worker (processes messages from Redis)
 
 ## Option 2: Run Commands Separately (4 Terminal Windows)
+
+**IMPORTANT: Run migrations FIRST before starting any services:**
+```bash
+python manage.py migrate
+```
 
 ### Terminal 1: Start Redis
 ```bash
@@ -44,11 +58,6 @@ python manage.py scheduler_loop
 ### Terminal 4: Worker
 ```bash
 python manage.py worker
-```
-
-**Note:** Run migrations once before starting:
-```bash
-python manage.py migrate
 ```
 
 ## Single Pod Deployment

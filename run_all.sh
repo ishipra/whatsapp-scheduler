@@ -6,9 +6,9 @@ set -e
 
 echo "Starting WhatsApp Scheduler services..."
 
-# Run migrations
+# Run migrations first (required before starting services)
 echo "Running database migrations..."
-python manage.py migrate
+python manage.py migrate --noinput
 
 # Start Django server in background
 echo "Starting Django server..."
