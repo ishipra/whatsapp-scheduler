@@ -1,0 +1,23 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WhatsApp Scheduler — UI</title>
+    <link rel="stylesheet" href="{% static 'scheduler_ui/style.css' %}">
+  </head>
+  <body>
+    <main class="container">
+      <h1>WhatsApp Scheduler</h1>
+
+      <p id="message">Click the button to trigger an action in the scheduler.</p>
+
+      <button id="triggerBtn" class="btn">Trigger Action</button>
+
+      <div id="result" aria-live="polite"></div>
+    </main>
+
+    <script src="{% static 'scheduler_ui/script.js' %}"></script>
+  </body>
+</html>
