@@ -1,0 +1,14 @@
+#secret files
+.env
+
+#venv
+.venv
+
+#logs
+logs/
+
+#debug files
+debug.log
+
+#backup files
+backup/

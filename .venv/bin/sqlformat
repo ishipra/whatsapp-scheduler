@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/mnt/c/Users/Windows 11/whatsapp_scheduler/.venv/bin/python3" "$0" "$@"
-' '''
+#!/Users/sujayprabhat/whatsapp-scheduler/.venv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys
